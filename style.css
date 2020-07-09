@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.container button {
+  all: unset;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-left: 5px solid #2364AA;
+  padding: 10px;
+}
+
+.container .button-bg {
+  position: absolute;
+  top: 0px;
+  pointer-events: none;
+  width: 0%;
+  background-color: #94b8db;
+  height: 100%;
+  transition: width 0.2s;
+  z-index: -1;
+}
+
+.container button:hover + .button-bg {
+  width: 100%;
+}
+
+.modal {
+  visibility: hidden;
+  background-color: #fff;
+  width: 60%;
+  margin: 1rem auto;
+  height: 400px;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 20;
+  transition: all 0.3s;
+}
+
+.modal-content{
+    text-align: center;
+    padding: 2rem;
+}
+.modal-content p,
+.modal-content ul {
+  text-align: justify;
+}
+
+
+.modal-content .user-action{
+    margin: 1rem auto;
+    width: 100px;
+}
+
+
+.user-action label{
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.user-action input[type="checkbox"]{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.user-action input:disabled{
+    cursor: not-allowed;
+}
+
+.user-action button{
+    padding: 8px;
+    width:100px;
+    background-color: #2364AA;
+    border: none;
+    outline: none;
+    color:#fff;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+}
+
+.user-action button:disabled{
+    background-color: #2364aa4b;
+    cursor: not-allowed;
+}
+
+
+.backdrop{
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.84);  
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:10;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.visible{
+    visibility: visible;
+}
+
+@media screen and (max-width:700px){
+    .modal{
+        width: 90%;
+        transition: all 0.3s;
+    }
+}
